@@ -42,7 +42,7 @@ class Game:
             self.player1.pick_gesture()
             self.player2.pick_gesture()
                     
-            if self.player1.active_gestures == 'rock' and (self.player2.active_gestures == ):
+            if self.player1.active_gestures == 'rock' and (self.player2.active_gestures == 'scissors' or self.player2.active_gestures == 'lizard'):
                 if self.player2.active_gestures == 'scissors':
                     self.player1.win_counter += 1
                     print('Rock crushes Scissors, player 1 wins!')
@@ -51,76 +51,67 @@ class Game:
                     print('Rock crushes Lizard, player 1 wins!')
                     
                 
-            elif self.player2.active_gestures == 'rock':
+            elif self.player2.active_gestures == 'rock' and (self.player1.active_gestures == 'scissors' or self.player1.active_gestures == 'lizard'):
+                self.player2.win_counter += 1
                 if self.player1.active_gestures == 'scissors':
-                    self.player2.win_counter += 1
                     print('Rock crushes Scissors, player 2 wins!')
                 elif self.player1.active_gestures == 'lizard':
-                    self.player2.win_counter += 1
                     print('Rock crushes Lizard, player 2 wins!')
                 
-            elif self.player1.active_gestures == 'scissors':
+            elif self.player1.active_gestures == 'scissors' and (self.player2.active_gestures == 'paper' or self.player2.active_gestures == 'lizard'):
+                self.player1.win_counter += 1
                 if self.player2.active_gestures == 'paper':
-                    self.player1.win_counter += 1
                     print('Scissors cuts paper, player 1 wins!')
                 elif self.player2.active_gestures == 'lizard':
-                    self.player1.win_counter += 1
                     print('Scissors decapitates Lizard, player 1 wins!')
                 
-            elif self.player2.active_gestures == 'scissors':
+            elif self.player2.active_gestures == 'scissors' and (self.player1.active_gestures == 'paper' or self.player1.active_gestures == 'lizard'):
+                self.player2.win_counter += 1
                 if self.player1.active_gestures == 'paper':
-                    self.player2.win_counter += 1
                     print('Scissors cuts paper, player 2 wins!')
                 elif self.player1.active_gestures == 'lizard':
-                    self.player2.win_counter += 1
                     print('Scissors decapitates Lizard, player 2 wins!')
 
-            elif self.player1.active_gestures == 'paper':
+            elif self.player1.active_gestures == 'paper' and (self.player2.active_gestures == 'rock' or self.player2.active_gestures == 'Spock'):
+                self.player1.win_counter += 1
                 if self.player2.active_gestures == 'rock':
-                    self.player1.win_counter += 1
                     print('Paper covers Rock, player 1 wins!')
                 elif self.player2.active_gestures == 'Spock':
-                    self.player1.win_counter += 1
                     print('Paper disproves Spock, player 1 wins!')
 
-            elif self.player2.active_gestures == 'paper':
+            elif self.player2.active_gestures == 'paper' and (self.player1.active_gestures == 'rock' or self.player1.active_gestures == 'Spock'):
+                self.player2.win_counter += 1
                 if self.player1.active_gestures == 'rock':
-                    self.player2.win_counter += 1
                     print('Paper covers Rock, player 2 wins!')
                 elif self.player1.active_gestures == 'Spock':
-                    self.player2.win_counter += 1
                     print('Paper disproves Spock, player 2 wins!')
 
-            elif self.player1.active_gestures == 'lizard':
+            elif self.player1.active_gestures == 'lizard' and (self.player2.active_gestures == 'Spock' or self.player2.active_gestures == 'paper'):
+                self.player1.win_counter += 1
                 if self.player2.active_gestures == 'Spock':
-                    self.player1.win_counter += 1
                     print('Lizard poisons Spock, player 1 wins!')
                 elif self.player2.active_gestures == 'paper':
-                    self.player1.win_counter += 1
                     print('Lizard eats Paper, player 1 wins!')
 
-            elif self.player2.active_gestures == 'lizard':
+            elif self.player2.active_gestures == 'lizard' and (self.player1.active_gestures == 'Spock' or self.player1.active_gestures == 'paper'):
+                self.player2.win_counter += 1
                 if self.player1.active_gestures == 'Spock':
-                    self.player2.win_counter += 1
                     print('Lizard poisons Spock, player 2 wins!')
                 elif self.player1.active_gestures == 'paper':
-                    self.player2.win_counter += 1
                     print('Lizard eats Paper, player 2 wins!')
 
-            elif self.player1.active_gestures == 'Spock':
+            elif self.player1.active_gestures == 'Spock' and (self.player2.active_gestures == 'scissors' or self.player2.active_gestures == 'rock'):
+                self.player1.win_counter += 1
                 if self.player2.active_gestures == 'scissors':
-                    self.player1.win_counter += 1
                     print('Spock smashes scissors, player 1 wins!')
                 elif self.player2.active_gestures == 'rock':
-                    self.player1.win_counter += 1
                     print('Spock vaporizers rock, player 1 wins!')
 
-            elif self.player2.active_gestures == 'Spock':
+            elif self.player2.active_gestures == 'Spock' and (self.player1.active_gestures == 'scissors' or self.player1.active_gestures == 'rock'):
+                self.player2.win_counter += 1
                 if self.player1.active_gestures == 'scissors':
-                    self.player2.win_counter += 1
                     print('Spock smashes scissors, player 2 wins!')
                 elif self.player1.active_gestures == 'rock':
-                    self.player2.win_counter += 1
                     print('Spock vaporizes Rock, player 2 wins!')
 
             if self.player1.win_counter == 2 or self.player2.win_counter == 2:    
