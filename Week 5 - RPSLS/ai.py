@@ -5,5 +5,6 @@ class Ai(Player):
     def __init__(self, name):
         super().__init__(name)
 
-    def choose_gesture(self):
-        self.active_gesture = choice(self.pick_gesture)
+    def pick_gesture(self):
+        self.active_gestures = choice(self.gestures)
+        print(f'Computer has selected {self.active_gestures}')

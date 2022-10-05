@@ -8,7 +8,7 @@ class Player:
     def pick_gesture(self):
         user_decision = True
         while user_decision == True:
-            user_choice = input("Select 1 for rock, 2 for paper, 3 for scissors, 4 for lizard, 3 for spock")
+            user_choice = input("Select 1 for rock, 2 for paper, 3 for scissors, 4 for lizard, 5 for spock: ")
             if user_choice == "1":
                 self.active_gestures = self.gestures[0]
                 print(f"{self.name} have selected rock.")
