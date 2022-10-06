@@ -14,6 +14,7 @@ class Game:
         
     def display_welcome (self):
         print("Welcome to rock, paper, scissor, lizard, Spock!")
+        print("Winner is decided by a best out of 3 games.")
         print("Here are the rules:")
         print("Rock crushes Scissors")
         print("Scissors cuts Paper")
